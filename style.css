@@ -24,7 +24,7 @@ a {
 
 nav {
   background-color: #f2aedd;
-  color: #EEE7E8;
+  color: #000000;
   padding: 50px 0px;
 }
 
@@ -41,11 +41,11 @@ nav {
 }
 
 .nav-link {
-  border: 3px outset #a3a3a3;
+  border: 3px outset #e8588f;
   border-radius: 20px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
-  color: #EEE7E8;
+  background-color: #e8588f;
+  color: #000000;
   transition: 0.3s;
 }
 
@@ -53,7 +53,7 @@ nav {
   border: 3px outset #FFFFFF;
   border-radius: 20px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: #e8588f;
   transition: 0.3s;
 }
 
@@ -61,7 +61,7 @@ nav {
   border: 3px outset #FFFFFF;
   border-radius: 40px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: #e8588f;
   color: #000000;
   transition: 0.3s;
 }
@@ -70,7 +70,7 @@ nav {
   border: 3px inset #FFFFFF;
   border-radius: 40px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: #e8588f;
   transition: 0.3s;
 }
 
@@ -91,7 +91,7 @@ nav {
 
 code {
   background-color: #2d2b33;
-  color: #EEE7E8;
+  color: #000000;
   font-family: 'Courier New', Courier, monospace;
 }
 
