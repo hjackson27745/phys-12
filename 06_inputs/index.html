@@ -26,8 +26,151 @@
 <h3>Week 6: Electronic Inputs</h3>
 
 <h4>Assignment 1: Capactive Sensor<h4>
+  For this first part of the assingment we were asked to, 
+  <br>
+  "1. Use a sensor to measure a physical quantity with your microcontroller. Calibrate your sensor (describe the range between its min and max values, and whether/how you can control this range). Show data in the form of a table or graph."
+<br>
+<br>
+  I chose to do use a photoresitor to measure light intensity. I decided that this would be a good choice of measurement since there is a inversely proportional relationship to light intensity and electrical resistance. This means that the photoresistors resistance decreases as light intensity increases and as its resistance increases its light intensity. 
+  This is a photo of the wiring I did on the breadboard using the ESP32 WROOM devkit microcontroller
+  <br>
+  <br>
+  <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="breadboard_11.jpeg" alt="generic placeholder image"> 
+    <br>
+    <br>
+  Here are some photos of the serial plotter graphs from Arduino IDE:
+  <br>
+  <br>
+  <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="Serial plot 1.jpeg" alt="generic placeholder image"> 
+    <br>
+    <br>
+    This first photo is when my hand is covering the photoresistor
+  <br>
+  <br>
+  <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="Serial plot 2.jpeg" alt="generic placeholder image"> 
+    <br>
+    <br>
+    This second photo is my hand uncovering the photoresistor
+    <br>
+<br>
+    As it can be seen from the photos, when my hand is covering the photo resistor the graph flattens and as i was watching the serial mointor, I could see that values were lower overal. Once I took my hand off the photo ressitor values increased in the serial moniter and the graph shows much more spikes and movment was faster. 
+  <br>
+  <br>
+  I have also made a table for the data using values from the serial plotter in Arduino IDE. This table shows values for when my hand did not cover the photoresistor. (Do not mind the first number in the table it should also be 3071 not 71)
+  <br>
+  <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="Light intensity.jpeg" alt="generic placeholder image"> 
+    <br>
+    <br>
+    To figure out the max and min of these data sets as well as the range some basic math is required. I am first going to take the average of the min value. 
+    <br>
+    Min value average: 3071+3235= 6306/2= 3153
+    <br>
+    Now I will compute the max value.
+    <br>
+    Max value average:3085+3242= 6327/2= 3163.5 
+    <br>
+    There range is simply going to be subtracting these two values.
+    <br>
+    Range of max and min: 10.5(no coverage over photoresistor)
+  <br>
+  <br>
+  Now here is a table of values from Arduino IDE when my hand is covering the photoresistor:
+  <br>
+  <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="Light intensity 2.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    Min value average: 161
+    <br>
+    Max value average: 169
+    <br>
+    Range: 8
+    <br>
+As it can be seen, the values are much smaller in this second table. This indicates that the resistance must be much larger here in comparision to the other table where values were much higher indicating a lower resistance. 
+<br>
+<br> 
+  Here is the code for this:
+  <br>
+  <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="Arduino code_1.jpeg" alt="generic placeholder image"> 
+    <br>
+    <br>
 
+    The code simply has the anolog pin and allows it to "print" its values; read its values and produces values that I was bale to graph and make a table of. The table is taking two trials of the light intensity of the photoresistor as I cover the photo resistor and then when I uncover the photo resistor.  
+<br>
 <h4>Assignment 2: [Use + Calibrate Another Sensor]</h4>
+<br>
+For this second part of the assignment we were asked to
+<br>
+<br>
+"2. Do the same as (1) with a capacitive sensor you have fabricated yourself using copper tape, aluminum foil, Velostat, etc."
+
+I chose to use copper tape and measure change in capcitance as water level changes(i.e. drops or increases). I designed my wiring so that it consisted of copper tape strips on the cup with alligator clips on them and the alligator clips comnnect to two wires on the bread board. One wire is in the GPIO pin of 33 on my ESP32 Devkit and than the other wire connected to an alligator clip is ground. Power isn't needed because I am using ESP32's capacitive touch pins which internally charge and discharge small electrodes which in this case are the copper tape strips. This is why no external power source is needed. 
+
+Here are some images of my setup:
+<br>
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="Liquid level setup.jpeg" alt="generic placeholder image">
+<br>
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="Liquid level setup 2.jpeg" alt="generic placeholder image">
+<br>
+<br>
+After I set up the breadboard and wiring to the copper tape strips on the cup I created the code needed to measure change in capacitance. The code is here:
+<br>
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code yay 3.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    This code here is printing outputs of the reading from the GPIO pin when the water is almost full in the cup. As shown the values here are a bit lower indicating more water in the cup as well as an increase in capacitance.
+    <br>
+    <br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code yay 2.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    In this parituclar code we can see that the serial monitor is printing values that are a bit higher than the previous values. This indicates there was less liquid in the cup. This also means capacitance is decreasing. 
+    This all allows us to see that there is an inversely proportional relationship between the touchRead() value and the liquid levels. Through this experiment I was also able to learn that theres more conductive/high-dielectric material in water near the sensor whereas air is low dielectric near the sensor. 
+    <br>
+    <br>
+    Here is a table showing the averages of the capicatance provided from the touchRead() and the corresponding liquid levels. 
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="table capacitance.jpeg" alt="generic placeholder image">
+<br>
+<br>
+    I will also compute the max and min as well as the range for this table too.
+    <br>
+    Max: 98
+    Min:95
+    Range= 3 
+<br>
+-Another thing I would like to make note of particularly pertaining to the range in particular is that larger ranges provide better sensitivity and easier calibration in comparision to lower ranges. So the range in  the first table should have much better sensitivity, easier calibration rather thn noisy sensors and accuracy being much more limited.
+<br>
+<br>
+Lastly I chose to use an LED light to control information about liquid levels and make indications of when levels are empty, low, high.
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 </xmp>
