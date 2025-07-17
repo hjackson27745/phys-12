@@ -136,7 +136,7 @@ After I set up the breadboard and wiring to the copper tape strips on the cup I 
     box-shadow: #d53aa8 5px 5px 7px 4px;" src="code yay 2.jpeg" alt="generic placeholder image">
     <br>
     <br>
-    In this parituclar code we can see that the serial monitor is printing values that are a bit higher than the previous values. This indicates there was less liquid in the cup. This also means capacitance is decreasing. 
+    In this particular code we can see that the serial monitor is printing values that are a bit higher than the previous values. This indicates there was less liquid in the cup. This also means capacitance is decreasing. 
     This all allows us to see that there is an inversely proportional relationship between the touchRead() value and the liquid levels. Through this experiment I was also able to learn that theres more conductive/high-dielectric material in water near the sensor whereas air is low dielectric near the sensor. 
     <br>
     <br>
@@ -157,6 +157,15 @@ After I set up the breadboard and wiring to the copper tape strips on the cup I 
 <br>
 <br>
 Lastly I chose to use an LED light to control information about liquid levels and make indications of when levels are empty, low, high.
+<br>
+<br>
+I am defining three different threshold ranges for the LED light to give indication. 
+Empty: 15% or <
+Half full: 50%
+Full: 75% or >
+<br>
+<br>
+Here is the code of this:
 <br>
 <br>
 
