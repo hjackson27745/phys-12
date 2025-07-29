@@ -55,38 +55,40 @@
     };
 
     firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
+  const db = firebase.database();
 
-    const picker = document.getElementById("colorPicker");
-    const display = document.getElementById("colorValue");
-    const avatar = document.getElementById("avatar");
+  const picker = document.getElementById("colorPicker");
+  const display = document.getElementById("colorValue");
+  const avatar = document.getElementById("avatar");
 
-    const neutralAvatar = "Hello-kitty-avatar.jpeg";
-    const smileAvatar = "Hello-kitty-avatar.jpeg";
+  const neutralAvatar = "Hello-kitty-avatar.jpeg";
+  const smileAvatar = "HELLO KITTY LOVER.jpeg";
 
-    picker.addEventListener("input", () => {
+  let smileTimeout;
+  let debounceTimeout;
+
+  picker.addEventListener("input", () => {
+    clearTimeout(debounceTimeout);
+
+    debounceTimeout = setTimeout(() => {
       const hex = picker.value;
       display.textContent = hex;
 
-      // Convert HEX to RGB
       const r = parseInt(hex.substr(1, 2), 16);
       const g = parseInt(hex.substr(3, 2), 16);
       const b = parseInt(hex.substr(5, 2), 16);
 
-      // Update avatar glow
       avatar.style.boxShadow = `0 0 30px rgb(${r}, ${g}, ${b})`;
-
-      // Change to smiling face
       avatar.src = smileAvatar;
 
-      // Revert to neutral after 2 seconds
-      setTimeout(() => {
+      // Clear and reset smile timer
+      clearTimeout(smileTimeout);
+      smileTimeout = setTimeout(() => {
         avatar.src = neutralAvatar;
-      }, 2000);
+      }, 1500);
 
-      // Send to Firebase
+      // Update Firebase
       db.ref("/ledColor").set({ r, g, b });
-    });
-  </script>
-</body>
-</html>
+    }, 200); // Wait 200ms after last input
+  });
+</script>
