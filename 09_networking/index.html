@@ -35,6 +35,8 @@
 <h4>Assignment: [Program something with IOT]</h4>
 For this assignment my group members and I had decided that we wanted to make something play notes when you press a button/or engage with something. My groupmate Emma predominately worked on this while I worked on something else to try as well. So there are two different (IoT) related projects we have. One of them currently works and the other is still a work in progress. 
 <br>
+1. WEBSOCKET PIEZO BUZZER 
+<br>
 Visual interface that sends 8 note melodies to a piezo buzzer to display which note is currently playing:
 <br>
 To start off the piezo buzzer is connected to ground on the breadboard and it is also connected to a output pin. Using the tutorial from this website: 
@@ -120,6 +122,8 @@ Here is the wiring on the breadboard:
 <br>
 Here is the full code for this particular project:
 <br>
+<br>
+RGB LED CHANGING COLOR WITH WIFI:
 <br>
 Next, I predominately worked on this but we all played a part in this project. The idea of this project was to use Google Firebase to allow a RGB LED light to light up different colors picked by the user through the WiFi credientials that Firebase provides. To start off this assignment I followed a previous groups work from the class on the class website along with some videos and tutorials to get started. 
 <br>
@@ -212,7 +216,42 @@ After setting up Firebase I moved on to the coding portion which was a huge port
     box-shadow: #d53aa8 5px 5px 7px 4px;" src="code55.jpeg" alt="generic placeholder image">
     <br>
     <br>
-With this 1st iteration the biggest issue was the Firebase library. Once the code was uploaded and run errors would pop up claiming that there was no trace of the library and that the files apart of the Firebase library were no where to be found. My idea to combat this issue was to see if I could reinstall the library. This unfortunately didn't work so I tired to see if I could download the Firebase ESP32 zip file that comes from the Firebase ESP32 library Github page. I downloaded the Zip file and manually checked to make sure that the file was in the folder of the Firebase ESP32 library. Once I confirmed that it was I went back into Ardunio and tried uploading the code again. It still didn't work. With more errors and trying to figure out what was wrong I got help from Bobby and was able to get the code to upload properly without errors but he advised for me to follow more of the article I had linked above earlier on and to try following the section that discusses, 
+With this 1st iteration the biggest issue was the Firebase library. Once the code was uploaded and run errors would pop up claiming that there was no trace of the library and that the files apart of the Firebase library were no where to be found. My idea to combat this issue was to see if I could reinstall the library. This unfortunately didn't work so I tired to see if I could download the Firebase ESP32 zip file that comes from the Firebase ESP32 library Github page. I downloaded the Zip file and manually checked to make sure that the file was in the folder of the Firebase ESP32 library. Once I confirmed that it was I went back into Ardunio and tried uploading the code again. It still didn't work. With more errors and trying to figure out what was wrong I got help from Bobby and was able to get the code to upload properly without errors but he advised for me to follow more of the article I had linked above earlier on and to try and follow the ESP32 "Read From Firebase Database" section. Following information from this section I was able to move forward a bit more and make some progress. 
+<br>
+2nd iteration:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="new-1.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="new-2.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="new-3.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="new-4.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="new-5.jpeg" alt="generic placeholder image">
+<br>
+This iteration made more progress into the WiFi aspect of this project. I was able to get the Firebase library to work and got all the WiFi credentials, Firebase components, timer variables for recording data, and authentication to upload and go through. I have to work more on figuring out why Firebase cannot read data around the LED light itself though. I am still struggling with getting the LED light to turn on so that would be a "next step" to take. 
+<br>
+The final thing i worked on for this particular project was creating a color picker for the user that allows the user to pick a color they want and what *should* then happen is that Firebase reads this data information being sent to it from the color picker and then it is able to take that information and send it to the ESP32 which then of course illuminates the color chosen. The good news is that Firebase does read data from the color picker but it is not able to send the data over to the ESP32 to then turn on the LED so it can show the colors chosen. 
+<br>
+Here is the color picker
+<br>
+<a href="led-control.html" class="pink-button">RGB LED LIGHT COLOR PICKER!
+</a>
+<br>
+Here is our Firebase project:
+<br>
+<a href="https://console.firebase.google.com/u/0/project/control-led-27/database/control-led-27-default-rtdb/data" class="pink-button">FIREBASE
+</a>
 </div>
 </xmp>
 </body>
