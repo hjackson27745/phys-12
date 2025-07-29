@@ -216,7 +216,7 @@ After setting up Firebase I moved on to the coding portion which was a huge port
     box-shadow: #d53aa8 5px 5px 7px 4px;" src="code55.jpeg" alt="generic placeholder image">
     <br>
     <br>
-With this 1st iteration the biggest issue was the Firebase library. Once the code was uploaded and run errors would pop up claiming that there was no trace of the library and that the files apart of the Firebase library were no where to be found. My idea to combat this issue was to see if I could reinstall the library. This unfortunately didn't work so I tired to see if I could download the Firebase ESP32 zip file that comes from the Firebase ESP32 library Github page. I downloaded the Zip file and manually checked to make sure that the file was in the folder of the Firebase ESP32 library. Once I confirmed that it was I went back into Ardunio and tried uploading the code again. It still didn't work. With more errors and trying to figure out what was wrong I got help from Bobby and was able to get the code to upload properly without errors but he advised for me to follow more of the article I had linked above earlier on and to try and follow the ESP32 "Read From Firebase Database" section. Following information from this section I was able to move forward a bit more and make some progress. 
+With this 1st iteration the biggest issue was the Firebase library. Once the code was uploaded and run errors would pop up claiming that there was no trace of the library and that the files apart of the Firebase library were no where to be found. My idea to combat this issue was to see if I could reinstall the library. This unfortunately didn't work so I tired to see if I could download the Firebase ESP32 zip file that comes from the Firebase ESP32 library Github page. I downloaded the Zip file and manually checked to make sure that the file was in the folder of the Firebase ESP32 library. Once I confirmed that it was, I went back into Ardunio and tried uploading the code again. It still didn't work. With more errors and trying to figure out what was wrong I got help from Bobby and was able to get the code to upload properly without errors but he advised for me to follow more of the article I had linked above earlier on and to try and follow the ESP32 "Read From Firebase Database" section. Following information from this section I was able to move forward a bit more and make some progress. 
 <br>
 2nd iteration:
 <br>
@@ -244,17 +244,17 @@ This iteration made more progress into the WiFi aspect of this project. I was ab
 <br>
 The final thing i worked on for this particular project was creating a color picker for the user that allows the user to pick a color they want and what *should* then happen is that Firebase reads this data information being sent to it from the color picker and then it is able to take that information and send it to the ESP32 which then of course illuminates the color chosen. The good news is that Firebase does read data from the color picker but it is not able to send the data over to the ESP32 to then turn on the LED so it can show the colors chosen. 
 <br>
-Here is the color picker
+Here is the color picker:
 <br>
 <a href="led_control_1.html" class="pink-button">RGB LED LIGHT COLOR PICKER!
 </a>
 <br>
-Here is our Firebase project:
+Here is our Firebase project "Control LED":
 <br>
 <a href="https://console.firebase.google.com/u/0/project/control-led-27/database/control-led-27-default-rtdb/data" class="pink-button">FIREBASE
 </a>
 <br>
-Here is the code in html for the color picker:
+Here is the code in HTML for the color picker:
 <br>
 <img style="border: 3px solid #eb85e7;
     box-shadow: #d53aa8 5px 5px 7px 4px;" src="html-1.jpeg" alt="generic placeholder image">
