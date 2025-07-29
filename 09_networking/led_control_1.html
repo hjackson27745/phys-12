@@ -3,17 +3,46 @@
 <head>
   <title>RGB LED Controller</title>
   <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+
+    #avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 20px auto;
+      box-shadow: 0 0 20px #ffffff;
+      transition: box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    #colorPicker {
+      width: 150px;
+      height: 40px;
+      border: none;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Pick a Color for Your LED!</h2>
+  <h2>Pick a Color for Your LED</h2>
+
+  <!-- Avatar -->
+  <img id="avatar" src="Hello-kitty-avatar.jpeg" alt="Avatar">
+
+  <!-- Color Picker -->
   <input type="color" id="colorPicker" value="#ffffff">
   <p>Selected Color: <span id="colorValue">#ffffff</span></p>
 
+  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
 
   <script>
-    // Replace these with your Firebase project values
+    // 🔧 Replace with your real Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyB3pOoyKCrTZ6eX1uIjMQAr2PlG3mj_eXA",
   authDomain: "control-led-27.firebaseapp.com",
@@ -25,14 +54,16 @@
   measurementId: "G-FP2X9942N1"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
     const picker = document.getElementById("colorPicker");
     const display = document.getElementById("colorValue");
+    const avatar = document.getElementById("avatar");
 
-    // Listen for color changes
+    const neutralAvatar = "Hello-kitty-avatar.jpeg";
+    const smileAvatar = "Hello-kitty-avatar.jpeg";
+
     picker.addEventListener("input", () => {
       const hex = picker.value;
       display.textContent = hex;
@@ -42,10 +73,19 @@
       const g = parseInt(hex.substr(3, 2), 16);
       const b = parseInt(hex.substr(5, 2), 16);
 
-      // Write to Firebase at /ledColor
-      db.ref("/ledColor").set({ r, g, b })
-        .then(() => console.log(`Sent RGB: ${r}, ${g}, ${b}`))
-        .catch((error) => console.error("Firebase Error:", error));
+      // Update avatar glow
+      avatar.style.boxShadow = `0 0 30px rgb(${r}, ${g}, ${b})`;
+
+      // Change to smiling face
+      avatar.src = smileAvatar;
+
+      // Revert to neutral after 2 seconds
+      setTimeout(() => {
+        avatar.src = neutralAvatar;
+      }, 2000);
+
+      // Send to Firebase
+      db.ref("/ledColor").set({ r, g, b });
     });
   </script>
 </body>

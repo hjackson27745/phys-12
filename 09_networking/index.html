@@ -239,19 +239,28 @@ With this 1st iteration the biggest issue was the Firebase library. Once the cod
     <img style="border: 3px solid #eb85e7;
     box-shadow: #d53aa8 5px 5px 7px 4px;" src="new-5.jpeg" alt="generic placeholder image">
 <br>
+<br>
 This iteration made more progress into the WiFi aspect of this project. I was able to get the Firebase library to work and got all the WiFi credentials, Firebase components, timer variables for recording data, and authentication to upload and go through. I have to work more on figuring out why Firebase cannot read data around the LED light itself though. I am still struggling with getting the LED light to turn on so that would be a "next step" to take. 
 <br>
 The final thing i worked on for this particular project was creating a color picker for the user that allows the user to pick a color they want and what *should* then happen is that Firebase reads this data information being sent to it from the color picker and then it is able to take that information and send it to the ESP32 which then of course illuminates the color chosen. The good news is that Firebase does read data from the color picker but it is not able to send the data over to the ESP32 to then turn on the LED so it can show the colors chosen. 
 <br>
 Here is the color picker
 <br>
-<a href="led-control.html" class="pink-button">RGB LED LIGHT COLOR PICKER!
+<a href="led_control_1.html" class="pink-button">RGB LED LIGHT COLOR PICKER!
 </a>
 <br>
 Here is our Firebase project:
 <br>
 <a href="https://console.firebase.google.com/u/0/project/control-led-27/database/control-led-27-default-rtdb/data" class="pink-button">FIREBASE
 </a>
+<br>
+Here is the code in html for the color picker:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="html-1.jpeg" alt="generic placeholder image">
+    <br>
+
+<br>
 </div>
 </xmp>
 </body>
