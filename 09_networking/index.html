@@ -28,16 +28,191 @@
 
 <p class="margin">   </p>
 <div class="flexrow">
-  <a id="btn" href="wk9.zip" download>Download my files from this week!
-  </a>
+
 </div>
 <p class="margin">   </p>
 
 <h4>Assignment: [Program something with IOT]</h4>
-
-
-
-
+For this assignment my group members and I had decided that we wanted to make something play notes when you press a button/or engage with something. My groupmate Emma predominately worked on this while I worked on something else to try as well. So there are two different (IoT) related projects we have. One of them currently works and the other is still a work in progress. 
+<br>
+Visual interface that sends 8 note melodies to a piezo buzzer to display which note is currently playing:
+<br>
+To start off the piezo buzzer is connected to ground on the breadboard and it is also connected to a output pin. Using the tutorial from this website: 
+<br>
+</style>
+</head>
+<body>
+<a href="https://randomnerdtutorials.com/esp32-websocket-server-arduino/" class="pink-button">WebSocket Server: Control Outputs (Arduino IDE)</a>
+<br>
+<br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pink Button</title>
+  <style>
+    .pink-button {
+      display: inline-block;
+      background-color: #efbbf0; /* Lighter pink */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+    .pink-button:hover {
+      background-color: #feabff; /* Deeper pink on hover */
+    }
+</style>
+</head>
+<body>
+<br>
+As well as the stepper motor control code for the drawing machines for Websocket codes it was able to simplfy work so that code only needed to be written for handling messages that would go back and froth. Within the Arduino C++ code there is HTML and JS to be sure information gets sent to the browser by the server. 
+<br>
+In the browser, it has been designed so that you can select a note from C4 to A5 for each of the eight select dropdowns present on the screen(no sharps or flats included due to time). After this you can click the play button and then the browser will use the "formatSend()" function to send a JSON string with the contents of the form's select dropdowns to the server. 
+<br>
+Here's the code:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code_other.jpeg" alt="generic placeholder image">
+<br>
+<br>
+Then once the ESP32 recives the message, handleWebSocketMessage() parses the JSON, puts some set frequencies into the notes array, and then also sets newRequest to true so the notes can play ina loop():
+<br>
+Here's the code for this loop:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code_other1.jpeg" alt="generic placeholder image">
+<br>
+<br>
+Within loop(), a while loop is going to iterate through all the frequencies that were set in the notes array and then use Arduino's tone() function to play them on the piezo buzzer. (Frequencies used came from the docs for the (tone) function). It also uses the textAll method to send the index of currently playing notes back to the browser. 
+<br>
+Code for this:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code_other2.jpeg" alt="generic placeholder image">
+<br>
+<br>
+Back in the browser, onMessage() handles visual feedbacks by setting the color of the currently playing circle to red. The delay between the tone actually playing and the note then turning red is noticable but it is not an awful problem. 
+<br>
+More code:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code_other3.jpeg" alt="generic placeholder image">
+<br>
+<br>
+Finally, all of this involves the notes moving around using D3.js as this was the only way our groupmate Emma could make svgs respond to inputs. myNotes is also a instance of a class that can draw the staff and circles when it's created and it also has a syncColor method to change a circle's color when it gets called by the select dropdown. This in turn all allows for the ESP32 to get this information which allows the piezo buzzer to be notified so that melodies can play! 
+<br>
+Here is a video demonstration:
+<br>
+<video width="640" height="360" controls>
+  <source src="IMG_5992.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<br>
+Here is the wiring on the breadboard:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="wiring_2.jpeg" alt="generic placeholder image">
+<br>
+<br>
+Here is the full code for this particular project:
+<br>
+<br>
+Next, I predominately worked on this but we all played a part in this project. The idea of this project was to use Google Firebase to allow a RGB LED light to light up different colors picked by the user through the WiFi credientials that Firebase provides. To start off this assignment I followed a previous groups work from the class on the class website along with some videos and tutorials to get started. 
+<br>
+Link to previous group prject for the IoT assignment that I followed a bit:
+<br>
+<a href="https://gavinnlimm.github.io/phys-s-12/01_intro/weeknine.html" class="pink-button">Networking and IoT</a>
+<br>
+<br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pink Button</title>
+  <style>
+    .pink-button {
+      display: inline-block;
+      background-color: #efbbf0; /* Lighter pink */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+    .pink-button:hover {
+      background-color: #feabff; /* Deeper pink on hover */
+    }
+</style>
+</head>
+<body>
+<br>
+Here's the tutorial I tried to follow:
+<br>
+<a href="https://randomnerdtutorials.com/esp32-firebase-realtime-database/#database-url" class="pink-button">Getting Started with Firebase (Realtime Database)
+</a>
+<br>
+<br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pink Button</title>
+  <style>
+    .pink-button {
+      display: inline-block;
+      background-color: #efbbf0; /* Lighter pink */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+    .pink-button:hover {
+      background-color: #feabff; /* Deeper pink on hover */
+    }
+</style>
+</head>
+<body>
+  <br>
+After doing research to better understand how to approach this I first wired up the breadboard alogn with my other groupmate. Here's the wiring of the breadboard:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="wiring_33.jpeg" alt="generic placeholder image">
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="wiring_44.jpeg" alt="generic placeholder image">
+<br>
+<br>
+The breadboard consits of a RGB LED light that has 4 legs. Leg 1 is red, leg 2 is the cathode, leg 3 is green, and leg 4 is blue. Each leg required a resistor to be sure that current was properly distributed so that nothing breaksdown. Upon doing some research and asking classmates for help I also learned that soemtimes the red light on the RGB LED can overpower other colors and my solution this problem with help was to place a 300 resistor at the red leg of the LED and then two 100 resistors at the greena nd blue legs of the LED along with another two 100 resistors in series that way hopefully the red light would no longer overpower the other two. 
+<br>
+Then I moved on to figuring out how to setup Firebase. Setting up Firebase consisted of course of logging in, then creating a project so that I could use it for the RGB LED. I followed this video:
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TDyNokRaR1s?si=0oJ449EKfwhpiLnz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+After setting up Firebase I moved on to the coding portion which was a huge portion of this project. I have many iterations of code for this. 
+<br>
+1st iteration:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code12.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code34.jpeg" alt="generic placeholder image">
+<br>
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code55.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+With this 1st iteration the biggest issue was the Firebase library. Once the code was uploaded and run errors would pop up claiming that there was no trace of the library and that the files apart of the Firebase library were no where to be found. My idea to combat this issue was to see if I could reinstall the library. This unfortunately didn't work so I tired to see if I could download the Firebase ESP32 zip file that comes from the Firebase ESP32 library Github page. I downloaded the Zip file and manually checked to make sure that the file was in the folder of the Firebase ESP32 library. Once I confirmed that it was I went back into Ardunio and tried uploading the code again. It still didn't work. With more errors and trying to figure out what was wrong I got help from Bobby and was able to get the code to upload properly without errors but he advised for me to follow more of the article I had linked above earlier on and to try following the section that discusses, 
 </div>
 </xmp>
 </body>
