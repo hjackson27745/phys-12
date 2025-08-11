@@ -25,32 +25,265 @@
 
 <h3>Final Project: Helena's Final Project </h3>
 <br>
--7/14/25 + 7/15/25
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="finalproject.jpeg" alt="generic placeholder image">
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="finalproject2.jpeg" alt="generic placeholder image">
+  <br>
+  <br>
+MOTIVATION
+<p>My motivation for creating the “smart plant pot” stems from my grandmothers love for gardening and my love for plants myself. My grandmother had a lifelong love for gardening, and some of my earliest memories are of her tending to her plants with remarkable patience and care. When this 6 week course began, my initial idea was to create a robotic arm seed planter. This robotic arm would have been an automated system that could precisely place seeds in soil and also track plant health. It was an exciting concept on paper, but the more I explored it, the more it became clear that the scope was far too ambitious for the time frame. Robotic arms demand a great deal of work in comparsion to my smart plant pot like mechanical precision/lots of fabrication, motor control, complex programming, and calibration. Building such a system from scratch in a short project window would have meant sacrificing reliability and the overall quality of the project. <p>
+<p>Rather than push forward with something overly complex and risk ending up with little to nothing for my final project presentation, I decided to pivot. The “smart plant pot” emerged as a solution that was still technologically interesting, but far more achievable in six weeks. I also had help from TF's to really understand what was an achiveable goal for MVP week and then later on into the final weeks of the semester. This project kept the spirit of my original idea while also combining technology with the act of growing plants. This approach allowed me to focus on features that directly help plants thrive, such as soil moisture monitoring, humidity and temperature monitoring/signaling as well as sunlight exposure. <p>
+<p>In the end, the shift was not just about feasibility but also about designing something that feels personal and meaningful, and that could realistically be completed to a high standard within the course. The “smart plant pot” is, in a way, my own blend of my grandmother’s green thumb and my passion for building useful, thoughtful technology. My hope is to make this project reusable, effective, and useful. <p>
+Prototype:
 <br>
-Today I am working more on brainstorming ideas for my project. I am going to make a robot/robotic arm that can plant seeds. To start off with the brainstorming, I thought about first creating the tray for where pots would be placed with soil and then also creating a base for the robotic arm so that it is more stable and it's bottom half is stationary. 
+Starting off with my prototype my idea was to break it off piece by piece. I started off with creating a CAD in Fusion for my plant pot. Here is my explanation and documentation of my prototype:
 <br>
-Here are some photos that I have been refrencing for the robotic arm.
+Click here 
 <br>
-<img src="robot arm_1.jpeg" alt="generic placeholder image">
-<br>
-<br>
-<img src="robot armmm.jpeg" alt="generic placeholder image">
-<br>
-<br>
-I am starting to work on a CAD for the tray. This is what I want the final product to look like for the tray.
-<br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pink Button</title>
+  <style>
+    .pink-button {
+      display: inline-block;
+      background-color: #efbbf0; /* Lighter pink */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+    .pink-button:hover {
+      background-color: #feabff; /* Deeper pink on hover */
+    }
 
-<img src="tray.jpeg" alt="generic placeholder image">
-<br>
-<br>
-For the dimensions of the tray I am thinking of doing a 45" X 15" tray. 
-<br>
-<br>
--7/20 + 7/21 + 7/22
-<br>
-I have decided to scratch the robotic arm seed planter idea and start some parts of my project "from scratch". Instead of doing the robotic arm I decided along with help from Bobby and thinlking through my ptoject idea that I wantted to create a "Smart Plant Pot". The smart plant pot is a flower pot that can recognize and track soil mositure, humidity levels, temperature levels, sunglight, and provide the user with a more interactive hands-on apprach to watering plants. This flower pot is designed more so for indoor use but I have had ideas (if all goes well with creating more medium sized smart plant pots) to extend this to outdoor use and to have much alrger flower pots. As apart of the assingment deadline on Tuesday, July 22nd we needed to have an mvp of our final project. My mvp was creating a mini prototype version of the smart plant pot with the features described above. 
- 
+  </style>
+</head>
+<body>
+<a href="https://hjackson27745.github.io/phys-12/07_outputs/index.html" class="pink-button">Click Me!</a>
 
+</body>
+</html>
+<br>
+<br>
+As shown in the demo video for my prototype everything worked properly. The main components of this "Smart Plant pot" consisted of a soil moisture sensor that can detect and signal different thresholds of soil moisture. These thresholds are dry, moist, and wet. When the sensor detects a particular moisture level it is indicated by the corresponding LED light turning on. Red is for when the soil is dry/too dry, green is for when the soil is moist and blue is for when the soil is wet/too wet. The next compinent is a humidity sensor. A yellow LED light was added after completing my protype to signal humidity levels. A final big compinent is the OLED display screen which displays a overview/condensed version of all this information. It provides the user with an opportunity to interact with the smart plant pot and learn more about their plant and better understand how to keep their plant helathy based off of mositure detection and humidity levels. 
+<br>
+<br>
+-On 8/4/2025 some new additions were made to the coding portion and wiring portion of my project. I added more LED's to indicate two more major peices of plant health information. Temperature and light/sunlight exposure. On the breadboard a clear LED is used to indicate temperature levels which is also read from the DHT22 sensor. The white light is a indicator of sunlight exposure which is connected to information being read from a photoresistor which tracks light in the surrounding space/environment. These were connected the same way as the moisture LED lights. As for the photoresistor, I used a 10 kilo ohm resistor instead of a 100 kilo ohm resistor to account for anolog readings and to be sure a voltage divider was created. 
+<br>
+<br>
+Here are photos of new additions to the code around temperature, sunlight exposure and wiring.
+<br>
+Wiring additions:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="photoresistor.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="lights.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+
+Code additions:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code1.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code2.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code3.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code4.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code5.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code6.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code 7.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="code8.jpeg" alt="generic placeholder image">
+<br>
+<br>
+-New additions were also added to my project on the woodworking/fabrication piece. I created a new base platform for the geometric pot and a second platform for the geometric pot that would be able to hide the protoboard and wiring connections underneath so that way the pot appeared "smart" and to also make the project be more visually appealing. I used a protoboard and soldered my wiring connections and esp32 to the board for more permanent connections for praticality as the breaboard was starting to become very conveluded with the amount of wires on it and connections were easily pulling out of the breaboard causing constant extra time spent figuring out where to connect things again and causing code to have to be changed. 
+<br>
+<br>
+Photos of new additions to fabrication.
+<br>
+New 3D printed pot on the newly laser cut platform
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication1.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+The new second "box" platform:
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication2.jpeg" alt="generic placeholder image">
+  <br>
+  <br>
+  <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication3.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    Sides of the box platform:
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication4.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    Hinges for the inside of box platform
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication5.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    Box platform on top of bottom platform + removable
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication6.jpeg" alt="generic placeholder image">
+<br>
+<br>
+<img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication7.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+    Hinges attached underneath to the corners of the box platform. For thr attachment of the hinges I attached each side of the hinge to the corners of the side panels of the box platform using a hot glue gun. For practicality reasons I had created holes in Fusion on the top and front of the hinges where I could place M3 screws that allowed the panels to be "removable" in case I wanted to take a look inside to the protoboard or if I wanted to make new adjustments. 
+    <br>
+    <img style="border: 3px solid #eb85e7;
+    box-shadow: #d53aa8 5px 5px 7px 4px;" src="fabrication8.jpeg" alt="generic placeholder image">
+    <br>
+    <br>
+PITFALLS/COMPLICATIONS/ERRORS:
+<p>Many pitfalls had occured in making a transition from my prototype of thr smart plant pot to what I had considered was going to be a "final iteration" of the project. While the final iteration marked real progress from my prototype demonstrated during MVP week, it also revealed several complications, many of which were the result of transitioning from a quick prototyping mindset to a more “finished product” approach.One major change was my decision to move from a breadboard to a protoboard, soldering all my wiring connections for permanent connections. In theory, this was the right move toward a more stable circuit. In practice, my inexperience with soldering proved costly. I applied too much solder in certain places, and this likely caused unintended bridges between connections, leading to shorting the entire circuit. I had checked with a TF to confirm whether or not the circuit had shorted with a multimeter and was able to confirm that more than likely it was shorted. The ESP32 also was very hot to touch after I had finished soldering all the wire connections. Physical constraints also became an issue. I had designed the platform for the plant pot early on, before finalizing the wiring and soldered components. Once the soldering was complete, I realized the now bulkier circuit no longer fit under the box platform as intended. <p>
+<p>Another intended upgrade was switching from the small OLED screen used in early versions to a larger TFT display for better readability and a more polished look. Unfortunately, despite numerous attempts ranging from tweaking the code to rewriting display functions entirely, I was unable to get the TFT screen to display the plant’s sensor data information. Even after multiple code iterations and troubleshooting sessions, the display remained blank; a white screen, forcing me to stick with the smaller OLED in the final version.<p>
+<p>Finally, wire management proved to be an ongoing challenge. As the number of components increased, so did the wiring complexity. Without a clear, consistent labeling system, it became time-consuming to trace wires back to their corresponding sensors or modules. This not only slowed down debugging but also made the assembly look less organized than I had hoped. These pitfalls underscored a key lesson for me which was: moving from a functional prototype to a polished build requires not only technical skill but also careful planning. There are some things I had not accounted for in the process that looking back, I wish I had paid attention to.Although there were many complications I plan to continue making adjustments, fixing multiple components, and reworking certain peices to this project to refine things and hopefully make it more ploished and ready to oficially use.<p> 
+NEXT STEPS:
+<br>
+<p>Some next steps in refining the “smart plant pot” would be to create a slot in the pot CAD design, using Fusion 360, where the OLED screen could be embedded directly into the pot’s body. I want to do this to give the device a much cleaner, integrated look compared to having the screen attached externally where wires are hanging everywhere. Currently the wiring system to the OLEd is wuite messy and isn't the most aesthetically pleasing. I would also like to refine the user parameters in my existing platform CAD files so that the platforms can be bigger. Once these refinements are made, I qill laser cut the new platform pieces, which would allow the protoboard and wiring to fit neatly under the box platform. This is also for the purpose of making the device look pleasing to the eye. But the most important next step is redoing circuitry on the protoboard for my wired connetions. I need to take a much more cautious approach to soldering applying just enough solder to secure a connection without risking accidental bridging between pins.<p>
+
+<p>Beyond hardware refinements, I would like to expand the plant pot's capabilities by creating a companion website. This site would feature a dropdown menu for plant type selection, categorized into low light, medium light, and high light plants. Each category would provide examples of suitable plants along with detailed plant health information. The user could then select the plant they plan to grow in the pot, and the “smart plant pot” would then display corresponding care information on the OLED screen that is customized to that plant’s specific needs. Along with this companon website I would like to use the Google Firebase as another format of displaying information. This would connect the Wifi wherever the user is to this device so that realtime information/data can be provided for how the plant is doing, if the user is meeting plant health "goals, and provide realtime infromation about things like humidity levels, temperature levles, sunlight exposure levels based off of the environment and weather. <p>
+
+<p>This feature would hopefully bridge the gap between technology and gardening knowledge, It would take much of the heavy the mental work out of plant care, making the process not only easier but also more enjoyable for the user.<p>
+DOWNLOADABLE FILES:
+<br>
+Files for geometric pot:
+Download my final CAD file of the pot here:
+<br>
+<a download href='./Geometric pot project-HELENA.f3d'>3D FILE </a>
+<br>
+Download my final gcode file of the pot here:
+<br>
+<a download href='./Geometric pot final1.gcode'>gcode FILE </a>
+<br>
+Download my final stl file of the pot here:
+<br>
+<a download href='./Geometric plant pot(1).stl'>STL FILE</a>
+<br>
+Files for brackets:
+<br>
+Download my final gcode brackets/hinges for the box platform here:
+<br>
+<a download href='./Brackets for pot housing-HELENA.gcode.f3d'>3D FILE </a>
+<br>
+Download my final CAD file of the brackets here:
+<br>
+<a download href='./Geometric pot project v4.f3d'>3D FILE </a>
+<br>
+Access my final code here:
+<br>
+<a download href='./final_sketch.ino'> Arduino code for smart plant pot </a>
+<br>
+<br>
+EXPLINATION OF SMART PLANT POT:
+<br>
+The smart plant pots purpose is to provide information to the user of the plant they have and the correpsonding plant health information to the user to make the planting/gardening process smoother and fun. Components to the smart plant pot are:
+<br>
+-ESP32
+<br>
+-Breadboard
+<br>
+-Wiring
+<br>
+6 LED lights
+<br>
+Red = Dry soil
+<br>
+Green = Moist soil
+<br>
+Blue = Wet soil
+<br>
+Yellow = Humidity levels signaling
+<br>
+Clear = Temperature levels signaling
+<br>
+White = Light/Sunlight exposure signaling
+<br>
+Capacitive Soil moisture sensor
+<br>
+Humidity + Temperature sensor
+<br>
+Photoresistor
+<br>
+OLED screen display
+<br>
+-Protoboard
+<br>
+Here is a video of my final project and a walk through and explanation of its operation and how eveything works/what the smart plant pot does:
+<br>
+<br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Final project</title>
+  <style>
+    .pink-button {
+      display: inline-block;
+      background-color: #efbbf0; /* Lighter pink */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+    .pink-button:hover {
+      background-color: #feabff; /* Deeper pink on hover */
+    }
+
+  </style>
+</head>
+<body>
+<a href="https://youtu.be/Rk8KF26JZeA?si=bvEfMSYm1zUe5B1D" class="pink-button">Click Here for the YouTube video!</a>
+
+</body>
+</html>
+<br>
+<br>
+ACKNOLEDGMENTS/THANK YOU:
+<br>
+I would like to sincerely thank my TFs and professors for making this class such a wonderful and inspiring experience. Your guidance, patience, and insight were so valuable and important to me, allowing me to grow and thrive as a student in ways I didn’t expect or know I was able to. I learned an incredible amount, gaining new skill sets and tools that I will carry with me into my third year at Harvard as a physics student. This course also gave me the opportunity to dive deeply into the world of engineering and fabrication, which has been both challenging and exciting. I now feel more confident in my ability to design, build, and problem-solve, and I’m eager to apply these skills in future projects ahead. I also plan to continue on with this particular project as mentioned earlier in hopes that I can make it work more effectivlely so my grandmother/other people can use this smart plant pot. Most of all, I’m excited for what lies ahead, and I plan to continue pursuing engineering and fabrication alongside my physics studies. Thank you again! 
 
 </div>
 </xmp>
